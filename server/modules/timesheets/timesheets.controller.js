@@ -32,7 +32,7 @@ function createTimesheet(req, res) {
     timesheetId: Date.now(),
     name: req.body.name,
     price: req.body.price,
-    date: eq.body.date
+    date: req.body.date
   };
 
   TIMESHEETS.push(newT);

@@ -2,12 +2,17 @@ define(function(require) {
   var React = require('react');
   var Router = require('react-router');
   var Link = Router.Link;
+  var State = Router.State;
   var RouteHandler = Router.RouteHandler;
 
   var UserActions = require('../actions/user.actions');
   var UserStore = require('../stores/user.store');
 
+  var cx = React.addons.classSet;
+
   return React.createClass({
+    mixins: [State],
+
     componentWillMount: function() {
       UserStore.on('change', this.handleChange);
     },
@@ -34,6 +39,13 @@ define(function(require) {
     },
 
     render: function () {
+      var timesheetsStyle = cx({
+            'active': this.isActive('timesheets')
+          }),
+          addTimeStyle = cx({
+            'active': this.isActive('add-timesheet')
+          });
+
       return (
         <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container">
@@ -42,14 +54,15 @@ define(function(require) {
             </div>
             <div id="navbar" className="navbar-collapse collapse">
               <ul className="nav navbar-nav">
-                <li>
+                <li className={timesheetsStyle}>
                   <Link to="timesheets">Timesheets</Link>
                 </li>
-                <li>
+                <li className={addTimeStyle}>
                   <Link to="add-timesheet">Add Timesheet</Link>
                 </li>
               </ul>
 
+              {/* This block can be moved to separated react view */}
               {this.renderLoginBlock()}
               
             </div>
@@ -59,7 +72,10 @@ define(function(require) {
     },
 
     renderLoginBlock: function() {
-      var logBlock;
+      var logBlock,
+          loginStyle = cx({
+            'active': this.isActive('login')
+          });
       if (this.state.isLoggedIn) {
         logBlock = <a href="#" onClick={this.onLogout}>Logout</a>;
       } else {
@@ -68,7 +84,7 @@ define(function(require) {
 
       return (
         <ul className="nav navbar-nav navbar-right">
-          <li>
+          <li className={loginStyle}>
             {logBlock}
           </li>
         </ul>
