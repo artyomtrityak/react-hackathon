@@ -16,10 +16,5 @@ requirejs.config({
     'app-bootstrap': []
   },
 
-  packages: [
-    'modules/users',
-    'modules/timesheets'
-  ],
-
   deps: ['routes']
 });
