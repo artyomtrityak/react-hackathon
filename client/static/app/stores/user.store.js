@@ -4,6 +4,10 @@ define(function(require) {
 
   //Create singleton
   var userStore = new (Backbone.Model.extend({
+      defaults: {
+        isLoggedIn: false
+      },
+
       logout: function() {
         this.clear();
       }

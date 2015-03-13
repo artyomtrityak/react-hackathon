@@ -11,7 +11,6 @@ define(function(require) {
 
   return React.createClass({
     onClick: function() {
-      console.log('click!!!');
       UserActions.logout();
     },
 

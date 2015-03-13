@@ -8,6 +8,31 @@ define(function(require) {
   var UserStore = require('../stores/user.store');
 
   return React.createClass({
+    componentWillMount: function() {
+      UserStore.on('change', this.handleChange);
+    },
+
+    componentDidMount: function () {
+      this.handleChange();  
+    },
+
+    componentWillUnmount: function() {
+      UserStore.off('change', this.handleChange);
+    },
+
+    handleChange: function() {
+      this.setState(UserStore.toJSON());
+    },
+
+    getInitialState: function () {
+        return {
+        };
+    },
+
+    onLogout: function() {
+
+    },
+
     render: function () {
       return (
         <nav className="navbar navbar-default navbar-fixed-top">
@@ -25,15 +50,29 @@ define(function(require) {
                 </li>
               </ul>
 
-              <ul className="nav navbar-nav navbar-right">
-                <li>
-                  <Link to="login">Login</Link>
-                </li>
-              </ul>
+              {this.renderLoginBlock()}
+              
             </div>
           </div>
         </nav>
       );
-    }
+    },
+
+    renderLoginBlock: function() {
+      var logBlock;
+      if (this.state.isLoggedIn) {
+        logBlock = <a href="#" onClick={this.onLogout}>Logout</a>;
+      } else {
+        logBlock = <Link to="login">Login</Link>;
+      }
+
+      return (
+        <ul className="nav navbar-nav navbar-right">
+          <li>
+            {logBlock}
+          </li>
+        </ul>
+      );
+    },
   });
 });

@@ -9,10 +9,12 @@ var TIMESHEETS = [
     {
         id: 1,
         name: 'Work hard',
+        price: 125,
         date: new Date()
     }, {
         id: 2,
         name: 'Code hard',
+        price: 510,
         date: new Date()
     }
 ];
@@ -28,8 +30,9 @@ function getTimesheets(req, res) {
 function createTimesheet(req, res) {
   var newT = {
     timesheetId: Date.now(),
-    name: 'New timesheet'+Date.now(),
-    date: new Date()
+    name: req.body.name,
+    price: req.body.price,
+    date: eq.body.date
   };
 
   TIMESHEETS.push(newT);
