@@ -4,6 +4,16 @@ define(function(require) {
   var Link = Router.Link;
   var RouteHandler = Router.RouteHandler;
 
+
+  //TODO: 
+  var AppDispatcher = require('dispatcher/app-dispatcher');
+  var UserStore = require('../stores/user.store');
+  
+  AppDispatcher.dispatch({
+      actionType: 'LOGOUT',
+      text: 'Hello'
+    });
+
   return React.createClass({
     render: function () {
       return (

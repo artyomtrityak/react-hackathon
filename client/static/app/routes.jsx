@@ -5,7 +5,7 @@ define(function(require) {
   var Route = Router.Route;
 
   // App components
-  var AppView = require('./views/app');
+  var AppView = require('./views/app.react');
     
   var routes = (
     <Route name="app" path="/" handler={AppView}>
