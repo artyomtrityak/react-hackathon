@@ -1,7 +1,7 @@
 define(function(require) {
-  var AppDispatcher = require('dispatcher/app-dispatcher'),
+  var AppDispatcher = require('dispatcher/app.dispatcher'),
 
-      UserUtils = require('webutils/user-utils'),
+      UserUtils = require('webutils/user.utils'),
       Actions = {};
 
   Actions.logout = function() {

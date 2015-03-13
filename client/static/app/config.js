@@ -14,8 +14,7 @@ requirejs.config({
 
   shim: {
     'twitter-bootstrap': ['jquery'],
-    'backbone': ['jquery', 'underscore'],
-    'app-bootstrap': []
+    'backbone': ['jquery', 'underscore']
   },
 
   deps: ['routes']

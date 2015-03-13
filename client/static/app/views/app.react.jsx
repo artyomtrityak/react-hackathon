@@ -4,7 +4,7 @@ define(function(require) {
   var Link = Router.Link;
   var RouteHandler = Router.RouteHandler;
 
-  var UserActions = require('../actions/user-actions');
+  var UserActions = require('../actions/user.actions');
   var UserStore = require('../stores/user.store');
 
   return React.createClass({

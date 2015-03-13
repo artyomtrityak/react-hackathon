@@ -1,6 +1,6 @@
 define(function(require) {
   var Backbone = require('backbone'),
-      AppDispatcher = require('dispatcher/app-dispatcher');
+      AppDispatcher = require('dispatcher/app.dispatcher');
 
   //Create singleton
   var userStore = new (Backbone.Model.extend({
@@ -15,6 +15,7 @@ define(function(require) {
 
       case 'LOGOUT':
         userStore.logout();
+        console.log('logout done');
         break;
 
       default:
