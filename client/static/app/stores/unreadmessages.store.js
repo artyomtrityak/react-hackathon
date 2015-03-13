@@ -13,7 +13,7 @@ define(function(require) {
 
   //Create singleton
   var unreadMessagesStore = new (Backbone.Model.extend({
-    constructor: function() {
+    initialize: function() {
       this.set({
         count: getUnreadCount()
       });

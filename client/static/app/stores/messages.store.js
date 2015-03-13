@@ -5,7 +5,7 @@ define(function(require) {
 
   //Create singleton
   var messagesStore = new (Backbone.Model.extend({
-    constructor: function() {
+    initialize: function() {
       this.set({ messages: [
         { id: 1, title: "First message", isRead: false },
         { id: 2, title: "Second message", isRead: false },

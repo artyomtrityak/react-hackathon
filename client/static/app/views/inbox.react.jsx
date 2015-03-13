@@ -20,8 +20,6 @@ define(function(require) {
     },
 
     componentDidMount: function() {
-      this._scrollToBottom();
-
       UnreadMessagesStore.on("change", this._onChange);
     },
 
