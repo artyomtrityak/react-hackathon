@@ -12,7 +12,7 @@ define(function(require) {
         { id: 3, title: "Third message", isRead: false },
         { id: 4, title: "Fourth message", isRead: false },
         { id: 5, title: "Fifth message", isRead: false }
-      ]);
+      ]});
     },
 
     getAll: function() {

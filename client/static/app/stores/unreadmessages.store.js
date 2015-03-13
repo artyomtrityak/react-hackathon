@@ -9,7 +9,7 @@ define(function(require) {
     return _.reduce(MessagesStore.getAll(), function(count, message) {
       return count + (message.isRead ? 0 : 1);
     }, 0);
-  }
+  };
 
   //Create singleton
   var unreadMessagesStore = new (Backbone.Model.extend({

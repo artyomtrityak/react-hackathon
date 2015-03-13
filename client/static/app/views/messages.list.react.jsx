@@ -42,7 +42,7 @@ define(function(require) {
     _onMessageClick: function(id) {
       return function() {
         MessagesActions.markAsRead(id);
-      }
+      };
     },
 
     render: function() {
