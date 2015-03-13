@@ -29,4 +29,4 @@ coverage
 
 #assets
 .idea
-client/static/build/
+client/build/
