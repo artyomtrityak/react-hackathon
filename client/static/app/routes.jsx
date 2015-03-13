@@ -5,17 +5,22 @@ define(function(require) {
   var Route = Router.Route;
 
   // App components
-  var AppView = require('./views/app.react');
+  var AppView = require('./views/app.react'),
+      NoopView = require('./views/noop.react');
     
   var routes = (
     <Route name="app" path="/" handler={AppView}>
-      <Route name="inbox" handler={AppView}/>
-      <Route name="calendar" handler={AppView}/>
-      <DefaultRoute handler={AppView}/>
+      
+      <Route name="timesheets" handler={NoopView}/>
+      <Route name="timesheet" handler={NoopView}/>
+      <Route name="add-timesheet" handler={NoopView}/>
+      <Route name="login" handler={NoopView}/>
+      
+      <DefaultRoute handler={NoopView}/>
     </Route>
   );
 
   Router.run(routes, function (Handler) {
-    React.render(<Handler/>, document.body);
+    React.render(<Handler/>, document.getElementById('react-root'));
   });
 });

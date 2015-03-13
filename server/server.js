@@ -3,19 +3,16 @@
 
 var express = require('express'),
     app = express(),
-    http = require('http'),
     config = require('./config'),
     routes = require('./routes'),
     session = require('express-session'),
     bodyParser = require('body-parser'),
-    errorHandler = require('errorhandler'),
-    server = http.createServer(app);
+    errorHandler = require('errorhandler');
 
 // Set static dir servering
 var staticDirName = __dirname.split((__dirname.indexOf('/')>-1) ? '/' : '\\');
 staticDirName.pop();
 
-//TODO: Linux(Mac) or Win path, replace / \\ 
 app.use(express.static(staticDirName.join('/') + '/client/build'));
 
 // Set development nasty logs
@@ -48,7 +45,7 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-server.listen(config.port, config.ip, 511, function () {
+var server = app.listen(config.port, config.ip, 511, function () {
   var host = server.address().address;
   var port = server.address().port;
 

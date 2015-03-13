@@ -26,6 +26,7 @@
     "spin.js": "~2.0.2",
     "flux": "~2.0.2",
     "backbone": "~1.1.2",
-    "underscore": "~1.8.2"
+    "underscore": "~1.8.2",
+    "immutable": "~3.6.4"
   }
 }

@@ -7,6 +7,8 @@ define(function(require) {
   var UserActions = require('../actions/user.actions');
   var UserStore = require('../stores/user.store');
 
+  var NavView = require('./nav.react');
+
   return React.createClass({
     onClick: function() {
       console.log('click!!!');
@@ -16,19 +18,25 @@ define(function(require) {
     render: function () {
       return (
         <div>
-          <header>
-            <ul>
-              <li><Link to="app">Dashboard</Link></li>
-              <li><Link to="inbox">Inbox</Link></li>
-              <li><Link to="calendar">Calendar</Link></li>
-            </ul>
-            <div onClick={this.onClick}>
-              Logged in as Jane
-            </div>
-          </header>
+          <NavView />
+          <div className="container">
 
-          {/* this is the important part */}
-          <RouteHandler/>
+            <div className="jumbotron">
+              <h2>Timesheet management</h2>
+              <p>
+                <input
+                  onClick={this.onClick}
+                  type="button"
+                  className="btn btn-lg btn-primary"
+                  value="Create timesheet">
+                </input>
+              </p>
+            </div>
+
+            {/* this is the important part */}
+            <RouteHandler/>
+
+          </div>
         </div>
       );
     }

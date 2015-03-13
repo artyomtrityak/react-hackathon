@@ -3,6 +3,7 @@ requirejs.config({
   urlArgs: 'bust=' + Date.now(),
   paths: {
     'flux': '../bower_components/flux/dist/Flux',
+    'immutable': '../bower_components/immutable/dist/immutable',
     'backbone': '../bower_components/backbone/backbone',
     'react': '../bower_components/react/react-with-addons',
     'react-router': '../bower_components/react-router/build/global/ReactRouter',
