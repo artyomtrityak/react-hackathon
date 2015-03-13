@@ -30,9 +30,9 @@ define(function(require) {
 
   var routes = (
     <Route name="app" path="/" handler={App}>
-      <Route name="inbox" handler={Inbox}/>
-      <Route name="calendar" handler={Calendar}/>
-      <DefaultRoute handler={Dashboard}/>
+      <Route name="inbox" handler={App}/>
+      <Route name="calendar" handler={App}/>
+      <DefaultRoute handler={App}/>
     </Route>
   );
 
