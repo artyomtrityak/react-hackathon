@@ -2,6 +2,7 @@ requirejs.config({
   baseUrl: 'app',
   urlArgs: 'bust=' + Date.now(),
   paths: {
+    'flux': '../bower_components/flux/dist/Flux',
     'react': '../bower_components/react/react-with-addons',
     'react-router': '../bower_components/react-router/build/global/ReactRouter',
     'jquery': '../bower_components/jquery/dist/jquery',
