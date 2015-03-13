@@ -15,6 +15,7 @@ gulp.task('default', [
     'react',
     'watch-copy',
     'watch-sass',
+    'watch-react',
     'watch-hint-js',
     'node-server-watch'
 ]);

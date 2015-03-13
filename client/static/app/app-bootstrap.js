@@ -3,5 +3,8 @@ define(function(require) {
 
   var React = require('react');
 
+  require('./routes');
+
+
   console.log('loaded', React);
 });

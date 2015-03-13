@@ -3,6 +3,7 @@ requirejs.config({
   urlArgs: 'bust=' + Date.now(),
   paths: {
     'react': '../bower_components/react/react-with-addons',
+    'react-router': '../bower_components/react-router/build/global/ReactRouter',
     'jquery': '../bower_components/jquery/dist/jquery',
     'moment': '../bower_components/moment/moment',
     'twitter-bootstrap': '../bower_components/bootstrap/dist/js/bootstrap',

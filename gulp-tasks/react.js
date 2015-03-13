@@ -5,9 +5,13 @@ var gulp = require('gulp'),
 
 gulp.task('react', function() {
   return gulp.src('./client/static/app/**/*.jsx')
+    .pipe(plumber())
     .pipe(react())
     .pipe(jshint())
-    .pipe(plumber())
     .pipe(jshint.reporter())
     .pipe(gulp.dest('./client/build/app'));
 });
+
+gulp.task('watch-react', function() {
+  gulp.watch('./client/static/app/**/*.jsx', ['react']);
+})
