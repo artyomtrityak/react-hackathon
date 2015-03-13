@@ -14,6 +14,8 @@ var express = require('express'),
 // Set static dir servering
 var staticDirName = __dirname.split((__dirname.indexOf('/')>-1) ? '/' : '\\');
 staticDirName.pop();
+
+//TODO: Linux(Mac) or Win path, replace / \\ 
 app.use(express.static(staticDirName.join('/') + '/client/build'));
 
 // Set development nasty logs
