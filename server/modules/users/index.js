@@ -6,6 +6,7 @@ var express = require('express'),
     controller = require('./users.controller');
 
 router.post('/login', controller.login);
+router.post('/logout', controller.logout);
 
 module.exports.routes = router;
 module.exports.api = {

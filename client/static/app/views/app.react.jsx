@@ -4,17 +4,15 @@ define(function(require) {
   var Link = Router.Link;
   var RouteHandler = Router.RouteHandler;
 
-
-  //TODO: 
-  var AppDispatcher = require('dispatcher/app-dispatcher');
+  var UserActions = require('../actions/user-actions');
   var UserStore = require('../stores/user.store');
-  
-  AppDispatcher.dispatch({
-      actionType: 'LOGOUT',
-      text: 'Hello'
-    });
 
   return React.createClass({
+    onClick: function() {
+      console.log('click!!!');
+      UserActions.logout();
+    },
+
     render: function () {
       return (
         <div>
@@ -24,7 +22,9 @@ define(function(require) {
               <li><Link to="inbox">Inbox</Link></li>
               <li><Link to="calendar">Calendar</Link></li>
             </ul>
-            Logged in as Jane
+            <div onClick={this.onClick}>
+              Logged in as Jane
+            </div>
           </header>
 
           {/* this is the important part */}

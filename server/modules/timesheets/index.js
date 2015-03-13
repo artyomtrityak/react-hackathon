@@ -8,8 +8,6 @@ var express = require('express'),
     //Users
     UsersModule = require('../users');
 
-console.log(UsersModule.api.ensureAuthenticated);
-
 router.get('/:timesheetId', UsersModule.api.ensureAuthenticated, controller.getTimesheet);
 router.get('/', UsersModule.api.ensureAuthenticated, controller.getTimesheets);
 router.post('/', UsersModule.api.ensureAuthenticated, controller.createTimesheet);
