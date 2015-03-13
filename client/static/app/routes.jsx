@@ -6,17 +6,21 @@ define(function(require) {
 
   // App components
   var AppView = require('./views/app.react'),
+      InboxView = require('./views/inbox.react'),
       NoopView = require('./views/noop.react');
     
   var routes = (
     <Route name="app" path="/" handler={AppView}>
       
+      <Route name="inbox" handler={InboxView}/>
+
       <Route name="timesheets" handler={NoopView}/>
       <Route name="timesheet" handler={NoopView}/>
       <Route name="add-timesheet" handler={NoopView}/>
       <Route name="login" handler={NoopView}/>
       
       <DefaultRoute handler={NoopView}/>
+
     </Route>
   );
 
