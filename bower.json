@@ -1,0 +1,29 @@
+{
+  "name": "react-hackathon",
+  "version": "0.0.1",
+  "homepage": "https://github.com/artyomtrityak/react-hackathon",
+  "authors": [
+    "Artyom Trityak <art.trityak@gmail.com>"
+  ],
+  "moduleType": [
+    "commonjs",
+    "amd",
+    "globals"
+  ],
+  "license": "GPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.0",
+    "lodash": "~2.4.1",
+    "react": "~0.12.2",
+    "react-router": "~0.12.4",
+    "requirejs": "~2.1.16",
+    "spin.js": "~2.0.2"
+  }
+}
