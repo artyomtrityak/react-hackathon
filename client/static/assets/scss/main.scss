@@ -8,6 +8,9 @@
   }
 }
 
-.message {
+.task {
   cursor: pointer;
+  .complete {
+    color: #666666;
+  }
 }

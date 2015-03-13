@@ -4,12 +4,12 @@ define(function(require) {
   var Link = Router.Link;
   var RouteHandler = Router.RouteHandler;
 
-  var MessagesList = require('./messages.list.react');
-  var UnreadMessagesStore = require('../stores/unreadmessages.store');
+  var TasksList = require('./tasks.list.react');
+  var CompleteTasksStore = require('../stores/completetasks.store');
 
   function getStateFromStores() {
     return {
-      unreadMessagesCount: UnreadMessagesStore.getCount()
+      completeTasksCount: CompleteTasksStore.getCount()
     };
   }
 
@@ -20,11 +20,11 @@ define(function(require) {
     },
 
     componentDidMount: function() {
-      UnreadMessagesStore.on("change", this._onChange);
+      CompleteTasksStore.on("change", this._onChange);
     },
 
     componentWillUnmount: function() {
-      UnreadMessagesStore.off("change", this._onChange);
+      CompleteTasksStore.off("change", this._onChange);
     },
 
     _onChange: function() {
@@ -34,8 +34,8 @@ define(function(require) {
     render: function () {
       return (
         <div>
-          <h3>Unread messages: {this.state.unreadMessagesCount}</h3>
-          <MessagesList/>
+          <h3>Complete tasks: {this.state.completeTasksCount}</h3>
+          <TasksList/>
         </div>
       );
     }

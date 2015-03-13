@@ -3,9 +3,9 @@ define(function(require) {
 
       Actions = {};
 
-  Actions.markAsRead = function(id) {
+  Actions.markAsComplete = function(id) {
     AppDispatcher.dispatch({
-      actionType: 'READ_MESSAGE',
+      actionType: 'COMPLETE_TASK',
       id: id
     });
   };
