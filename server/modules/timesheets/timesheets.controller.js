@@ -9,12 +9,14 @@ module.exports.createTimesheet = createTimesheet;
 var TIMESHEETS = [
     {
         id: 1,
+        customers: ['Playtech', 'OnePick'],
         name: 'Apply new login feature',
         price: 125,
         hours: 25,
         startWeekDate: new Date('03-13-2015')
     }, {
         id: 2,
+        customers: ['ECloud', 'OnePick'],
         name: 'Code hard with React.js',
         price: 510,
         hours: 43,
@@ -26,6 +28,8 @@ var TIMESHEETS = [
 var TIMESHEET_DETAILS = {
   name: 'Apply new login feature',
   details: [{
+    customer: 'Playtech',
+    project: 'BoomWi',
     day: 'Monday',
     hours: 10,
     price: 24,
@@ -33,12 +37,16 @@ var TIMESHEET_DETAILS = {
   },
   {
     day: 'Wednesday',
+    customer: 'Playtech',
+    project: 'BoomWi',
     hours: 5,
     price: 45,
     description: 'Debugging'
   },
   {
     day: 'Friday',
+    customer: 'OnePick',
+    project: 'Fixxer',
     hours: 15,
     price: 101,
     description: 'Work hard'
