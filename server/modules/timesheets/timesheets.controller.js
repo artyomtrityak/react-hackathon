@@ -5,22 +5,48 @@ module.exports.getTimesheet = getTimesheet;
 module.exports.getTimesheets = getTimesheets;
 module.exports.createTimesheet = createTimesheet;
 
+//By weeks
 var TIMESHEETS = [
     {
         id: 1,
-        name: 'Work hard',
+        name: 'Apply new login feature',
         price: 125,
-        date: new Date()
+        hours: 25,
+        startWeekDate: new Date('03-13-2015')
     }, {
         id: 2,
-        name: 'Code hard',
+        name: 'Code hard with React.js',
         price: 510,
-        date: new Date()
+        hours: 43,
+        startWeekDate: new Date('03-06-2015')
     }
 ];
 
+//One week details
+var TIMESHEET_DETAILS = {
+  name: 'Apply new login feature',
+  details: [{
+    day: 'Monday',
+    hours: 10,
+    price: 24,
+    description: 'Did something'
+  },
+  {
+    day: 'Wednesday',
+    hours: 5,
+    price: 45,
+    description: 'Debugging'
+  },
+  {
+    day: 'Friday',
+    hours: 15,
+    price: 101,
+    description: 'Work hard'
+  }
+]};
+
 function getTimesheet(req, res) {
-    res.status(200).json(TIMESHEETS[req.params.timesheetId]);
+    res.status(200).json(TIMESHEET_DETAILS);
 }
 
 function getTimesheets(req, res) {
